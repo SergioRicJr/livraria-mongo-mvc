@@ -8,6 +8,6 @@ const livroSchema = new mongoose.Schema({
     "img": {type: String}
 })
 
-const livro = mongoose.model("livros", livroSchema)
+const livros = mongoose.model("livros", livroSchema)
 
-export default livro
+export default livros
