@@ -15,7 +15,8 @@ const app = express()
 app.set("view engine", "ejs")
 app.set("views", "./view")
 
-app.use(router, express.json(), express.static("public"))
+app.use(express.json(), router, express.static("public"))
+//express.json() Sempre antes do router
 
 app.listen(PORT,()=>{
     console.log(`O servidor está ouvindo em http://localhost:${PORT}`)
