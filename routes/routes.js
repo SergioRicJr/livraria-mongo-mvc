@@ -1,9 +1,12 @@
 import express from 'express'
-import controller from '../controller/controller.js'
+import Controller from '../controller/controller.js'
 
 const router = express.Router()
 
 router 
-    .get("/", controller.mostraLivros)
+    .get("/", Controller.mostraLivros)
+    .delete("/:id", Controller.deletaLivro)
+    .post("/livro", Controller.adicionarLivro)
+    // .post("/adicionar", Controller.acicionarLivro)
 
 export default router
