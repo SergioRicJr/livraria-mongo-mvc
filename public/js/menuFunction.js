@@ -34,16 +34,16 @@ html.addEventListener("click", (e)=>{
         $(".menu-dropdown-edicao").addClass("hide")
     }
 
-    // if (element.classList.contains("salva-alteracao")) {
-    //     let inputTitulo = $(element).closest(".menu-dropdown-edicao").find(".input-titulo-edit").val()
-    //     let inputAutor =  $(element).closest(".menu-dropdown-edicao").find(".input-autor-edit").val()
-    //     let menuEdicao = element.parentElement
-    //     menuEdicao.classList.add("hide")
-    //     let menuDropOption = $(menuEdicao).prev()
-    //     menuDropOption.addClass("hide")
-    //     const id = element.closest(".Livro").id
-    //     conexaoApi.mudaLivro(id, inputTitulo, inputAutor)
-    // }
+    if (element.classList.contains("salva-alteracao")) {
+        let inputTitulo = $(element).closest(".menu-dropdown-edicao").find(".input-titulo-edit").val()
+        let inputAutor =  $(element).closest(".menu-dropdown-edicao").find(".input-autor-edit").val()
+        let menuEdicao = element.parentElement
+        menuEdicao.classList.add("hide")
+        let menuDropOption = $(menuEdicao).prev()
+        menuDropOption.addClass("hide")
+        const id = element.closest(".Livro").id
+        conexaoApi.mudaLivro(id, inputTitulo, inputAutor)
+    }
 
     if (element.classList.contains("btnDelete")) {
         console.log("btn deletar")
@@ -55,16 +55,16 @@ html.addEventListener("click", (e)=>{
         livroSelecionado.remove()
     }
 
-    // if (element.classList.contains("btnEdit")) {
-    //     var menuDropEdit = $(element).closest(".menu-dropdown").next()
-    //     menuDropEdit.toggleClass("hide")
-    //     // var menuDrop = element.closest(".menu-dropdown")
-    //     // menuDrop.classList.toggle("hide")
-    //     var inputTitulo = menuDropEdit.find(".input-titulo-edit")
-    //     var inputAutor = menuDropEdit.find(".input-autor-edit")
-    //     // inputTitulo = inputTitulo.find()
-    //     // console.log(inputTitulo)
-    //     // console.log(inputAutor)
-    // } 
+    if (element.classList.contains("btnEdit")) {
+        var menuDropEdit = $(element).closest(".menu-dropdown").next()
+        menuDropEdit.toggleClass("hide")
+        // var menuDrop = element.closest(".menu-dropdown")
+        // menuDrop.classList.toggle("hide")
+        var inputTitulo = menuDropEdit.find(".input-titulo-edit")
+        var inputAutor = menuDropEdit.find(".input-autor-edit")
+        // inputTitulo = inputTitulo.find()
+        // console.log(inputTitulo)
+        // console.log(inputAutor)
+    } 
 
 })

@@ -7,6 +7,7 @@ router
     .get("/", Controller.mostraLivros)
     .delete("/:id", Controller.deletaLivro)
     .post("/livro", Controller.adicionarLivro)
+    .put("/livro/:id", Controller.atualizaLivro)
     // .post("/adicionar", Controller.acicionarLivro)
 
 export default router

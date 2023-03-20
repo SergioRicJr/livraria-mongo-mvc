@@ -28,6 +28,15 @@ class Services {
             return {status: false, message: err.message}
         }
     }
+
+    static async modificaLivro(id, atualizacoes) {
+        try {
+            const livroAtualizado = await livro.findOneAndUpdate({_id: id}, atualizacoes)
+            return livroAtualizado
+        } catch(err) {
+            console.log(err.message)
+        }
+    }
 }
 
 export default Services

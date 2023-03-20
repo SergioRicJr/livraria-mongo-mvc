@@ -29,6 +29,16 @@ class Controller {
             res.status(422).send(adicLivroStatus.message)
         }
     }
+
+    static async atualizaLivro(req, res) {
+        // const idUserToken = req.headers.authorization
+        // const idUser = jsonwebtoken.verify(idUserToken, process.env.CHAVE_TOKEN).id
+        // const collection = criaColecaoUser(idUser)
+        let id = req.params.id
+        let atualizacoes = req.body
+        const livroAtualizado = await Services.modificaLivro(id, atualizacoes)
+        res.status(201).send(livroAtualizado)
+    }
 }   
 
 export default Controller

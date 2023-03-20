@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="./js/menuFunction.js" type="module" defer></script>
+    <script src="./js/menuLateral.js" defer type="module"></script>
     <link rel="stylesheet" href="./css/index.css">
 </head>
     <body>
@@ -52,7 +53,7 @@
                 </div>
             </div>
             <% for (let livro of livros) { %>    
-                <div class="Livro" id=<%= livro._id%>>
+                <div class="Livro" id="<%= livro._id%>">
                     <div class="card-livro">
                         <div class="n_livro">
                             <div class="container-icon"><i class="fa-solid fa-ellipsis-vertical"></i></div>
@@ -63,8 +64,8 @@
                                 </ul>
                             </div>
                             <div class="menu-dropdown-edicao hide">
-                                <input type="text" name="input-titulo-edit" class="input-titulo-edit" placeholder="titulo"></input>
-                                <input type="text" name="input-autor-edit" class="input-autor-edit" placeholder="autor"></input>
+                                <input autocomplete="off" value="<%= livro.titulo%>" type="text" name="input-titulo-edit" class="input-titulo-edit" placeholder="titulo"></input>
+                                <input autocomplete="off" value="<%= livro.autor%>" type="text" name="input-autor-edit" class="input-autor-edit" placeholder="autor"></input>
                                 <button class="salva-alteracao">Salvar</button>
                             </div>
                         </div>
